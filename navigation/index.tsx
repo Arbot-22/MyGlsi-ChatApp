@@ -45,10 +45,21 @@ const { userId }=  useContext(AuthContext);
 
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Auth" component={SignUpScreen} options={{ headerShown: false }}/>
+      {!userId ? (
+      <Stack.Screen 
+      name="Auth" 
+      component={SignUpScreen} 
+      options={{ headerShown: false }}
+      />
+      ) : (
+      <>
       <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
       <Stack.Screen name="Channel " component={ChannelScreen} options={{ headerTitle: "Channel" }} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
+      </>
+      )}
+      
+      
     </Stack.Navigator>
   );
 }
