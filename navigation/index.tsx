@@ -15,7 +15,6 @@ import Colors from '../constants/Colors';
 import AuthContext from '../contexts/Authentification';
 import useColorScheme from '../hooks/useColorScheme';
 import ChannelScreen from '../screens/ChannelScreen';
-import ModalScreen from '../screens/ModalScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
 import SignUpScreen from '../screens/SignUpScreen';
 import TabOneScreen from '../screens/ChannelListScreen';
