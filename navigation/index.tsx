@@ -40,22 +40,16 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
 
-  const { userId } = useContext(AuthContext);
+const { userId }=  useContext(AuthContext);
 
   return (
     <Stack.Navigator>
-      {!userId ? (
-        <Stack.Screen name="Auth" component={SignUpScreen} options={{ headerShown: false }} />
-      ) : (
-        <>
-<Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
+      <Stack.Screen name="Auth" component={SignUpScreen} options={{ headerShown: false }}/>
+      <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
       <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Modal" component={ModalScreen} />
       </Stack.Group>
-      )}
-
-
     </Stack.Navigator>
   );
 }

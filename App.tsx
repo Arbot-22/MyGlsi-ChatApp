@@ -23,10 +23,6 @@ export default function App() {
     
   }, []);
 
-  const onChannelPress = (channel: any) => {
-    setSelectedChannel(channel);
-  }
-
   if (!isLoadingComplete) {
     return null;
   } else {
@@ -40,7 +36,6 @@ export default function App() {
         </OverlayProvider>
         <StatusBar />
         </AuthContext.Provider>
-       
       </SafeAreaProvider>
     );
   }
