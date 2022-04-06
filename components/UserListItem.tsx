@@ -1,12 +1,25 @@
-import { View, Text, Image, StyleSheet} from 'react-native'
-import React from 'react'
+import { View, Text, Image, StyleSheet, Pressable} from 'react-native'
+import React, { useContext } from 'react'
+import { useChatContext } from 'stream-chat-expo';
+import AuthContext from '../contexts/Authentification';
 
 const UserListItem = ({ user }) => {
+
+  const { client } = useChatContext();
+  const { userId } = useContext(AuthContext);
+  
+  const onPress= async () => {
+    if(!userId || !user.id) {
+      return;
+    }
+    const channel = client.channel("messaging", {members: [user.id,userId]})
+    await channel.watch();
+  }
   return (
-    <View style={styles.root}>
+    <Pressable onPress={onPress} style={styles.root}>
       <Image style={styles.image} source={{ uri: user.image}}/>
       <Text>{user.name}</Text>
-    </View>
+    </Pressable>
   )
 }
 
