@@ -22,10 +22,12 @@ export default function UsersScreen() {
 
     return (
       <View style={styles.container}>
-        <FlatList data={users} renderItem={({ item }) => <UserListItem user={item} />}
-          refreshing={isLoading}
-          onRefresh={fetchUsers}
-        />
+        <FlatList
+        data={users}
+        renderItem={({ item }) => <UserListItem user={item} />}
+        refreshing={isLoading}
+        onRefresh={fetchUsers}
+      />
 
       </View>
     );

@@ -4,12 +4,11 @@ import { MessageInput, MessageList, Channel } from 'stream-chat-expo'
 import { useRoute } from '@react-navigation/core';
 
 const ChannelScreen = () => {
-  const route = useRoute();
 
-  const channel = route.params.?channel;
-  if (!channel) {
-    return <Text>Channel does not exist.</Text>
-  }
+  const route = useRoute();
+  
+  const channel = route.params?.channel
+
   return (
     <Channel channel={channel}>
       <MessageList/>
