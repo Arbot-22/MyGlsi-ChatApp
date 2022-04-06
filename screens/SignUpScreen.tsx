@@ -1,11 +1,14 @@
 import { View, Text, TextInput, StyleSheet, Pressable } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useChatContext } from 'stream-chat-expo'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import AuthContext from '../contexts/Authentification'
 
 const SignUpScreen = () => {
   const [number, setnumber] = useState("");
-  const [name, setname] = useState("");
+  const [name, setname] = useState(""); 
+
+  const { setUserId } = useContext(AuthContext)
   const { client } = useChatContext();
 
     const connectUser = async (name: string, number: string) => {
@@ -20,7 +23,7 @@ const SignUpScreen = () => {
       const channel = client.channel("livestream", "Glsi", { name: "master 2" })
       await channel.watch();
 
-  
+      setUserId("number")
     };
 
 
