@@ -1,6 +1,6 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import { MessageInput, MessageList } from 'stream-chat-expo'
+import { MessageInput, MessageList, Channel } from 'stream-chat-expo'
 import { useRoute } from '@react-navigation/core';
 
 const ChannelScreen = () => {
@@ -11,10 +11,10 @@ const ChannelScreen = () => {
     return <Text>Channel does not exist.</Text>
   }
   return (
-    <ChannelScreen channel={channel}>
+    <Channel channel={channel}>
       <MessageList/>
       <MessageInput/>
-    </ChannelScreen>
+    </Channel>
   )
 }
 

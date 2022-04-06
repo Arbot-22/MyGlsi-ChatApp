@@ -10,7 +10,7 @@ import { RootTabScreenProps } from '../types';
 export default function ChannelListScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
 
 
-  const onChannelPressed = (channel) => {
+  const onChannelPressed = (channel: any) => {
     navigation.navigate("Channel", {channel})
   }
   return (
