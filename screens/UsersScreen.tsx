@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { StyleSheet,FlatList } from 'react-native';
 import { useChatContext } from 'stream-chat-expo';
-import { Text, View } from '../components/Themed';
+import { View } from '../components/Themed';
 import UserListItem from '../components/UserListItem';
 
-export default function TabTwoScreen() {
+export default function UsersScreen() {
   const [users, setusers] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(false)
 
@@ -36,15 +36,6 @@ export default function TabTwoScreen() {
       flex: 1,
       alignItems: 'stretch',
       justifyContent: 'center',
-    },
-    title: {
-      fontSize: 20,
-      fontWeight: 'bold',
-    },
-    separator: {
-      marginVertical: 30,
-      height: 1,
-      width: '80%',
-    },
+    }
   });
 

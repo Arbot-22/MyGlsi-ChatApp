@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { ChannelList } from 'stream-chat-expo';
@@ -6,9 +7,11 @@ import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 
-export default function TabOneScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
+export default function ChannelListScreen({ navigation }: RootTabScreenProps<'TabOne'>) {
+
+
   const onChannelPressed = (channel) => {
-    
+    navigation.navigate("Channel", {channel})
   }
   return (
     <ChannelList onSelect={onChannelPressed} />
